@@ -1,0 +1,28 @@
+{% extends '../layouts/layout_init.html' %}
+
+{% block content%}
+
+    <div class="login-form-container">
+        <div class="login-form">
+            <h2 class="mb-4">Iniciar sesión en Prestamos Sena</h2>
+            <form class="form">
+                <div class="form-group mb-4">
+                    <label class="mb-2" for="username">Usuario:</label>
+                    <input type="text" class="form-control" id="username" placeholder="Ingrese su usuario">
+                </div>
+                <div class="form-group mb-4">
+                    <label class="mb-2" for="password">Contraseña:</label>
+                    <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+                </div>
+                <div class="d-grid gap-2 col-12 mx-auto">
+                    <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
+                    <a href="#">¿Olvidaste tu cuenta?</a>
+                    <a href="#">Crear cuenta nueva</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
