@@ -30,6 +30,8 @@ urlpatterns = [
 
     # Esta ruta estara vacia para que sea la pagina principal
     path('prestamos/', views.prestamos, name='prestamos'),
+
+    path('devoluciones', views.devoluciones, name='devoluciones'),
 ]
 
 if settings.DEBUG:

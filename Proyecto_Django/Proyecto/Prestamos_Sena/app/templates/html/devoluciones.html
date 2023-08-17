@@ -1,0 +1,74 @@
+{% extends '../layouts/layout_content.html' %}
+
+{% block content %}
+    <div>
+        <h2 class='mb-3'>Gestión de devolución de equipos</h2>
+        <hr/>
+
+        <div class="row">
+            <div class="p-2 col">
+              <input type="text" class="form-control" placeholder="Nombre Aprendiz" aria-label="Nombre Aprendiz">
+            </div>
+            <div class="p-2 col">
+              <input type="text" class="form-control" placeholder="Nombre de quien recibe" aria-label="Nombre de quien recibe">
+            </div>
+          </div>
+          <div class="row">
+            <div class="p-2 col">
+              <input type="text" class="form-control" placeholder="Identificación aprendiz" aria-label="Identificación aprendiz">
+            </div>
+            <div class="p-2 col">
+              <input type="text" class="form-control" placeholder="Identificación de quien recibe" aria-label="Identificación de quien recibe">
+            </div>
+          </div>
+          <div class="row">
+            <div class="p-2 col">
+              <input type="Email" class="form-control" placeholder="Email aprendiz" aria-label="Email aprendiz">
+            </div>
+            <div class="p-2 col">
+              <input type="text" class="form-control" placeholder="Id equipo" aria-label="Id equipo">
+            </div>
+          </div>
+          <div class="row">
+            <div class="p-2 col">
+              <input type="text" class="form-control" placeholder="Ficha" aria-label="Ficha">
+            </div>
+            <div class="p-2 col">
+              <input type="text" class="form-control" placeholder="Fecha devolución" aria-label="Fecha devolución">
+            </div>
+          </div>
+          <div class="row">
+            <div class="p-2 col">
+              <input type="text" class="form-control" placeholder="Telefono aprendiz" aria-label="Telefono aprendiz">
+            </div>
+            <div class="p-2 col">
+              <input type="text" class="form-control" placeholder="Estado del equipo" aria-label="Estado del equipo">
+            </div>
+          </div>
+
+          {% comment %} buttons {% endcomment %}
+          <div class="row">
+            <div class="d-flex justify-content-end p-2 col">
+                <button type="button" class="btn btn-primary btn-lg">Guardar</button>
+
+            </div>
+            <div class="d-flex justify-content-start p-2 col">
+                <button type="button" class="btn btn-danger btn-lg">Cancelar</button>
+            </div>
+          </div>
+          <hr/>
+          <table class='table table-dark'>
+            <thead>
+                <tr>
+                  <th scope="col">Id Equipo</th>
+                  <th scope="col">Aprendiz</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Fecha devolución</th>
+                  <th scope="col">Telefono</th>
+                </tr>
+              </thead>
+          <table/>
+
+    </div>
+{% endblock content %}
+

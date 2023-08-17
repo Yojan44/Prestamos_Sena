@@ -13,3 +13,7 @@ def prestamos(request):
     return render(request, 'html/prestamos.html', {
         'title' : 'Prestamos'
     })
+
+def devoluciones(request):
+
+    return render(request, 'html/devoluciones.html')
