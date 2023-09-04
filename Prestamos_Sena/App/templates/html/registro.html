@@ -1,0 +1,43 @@
+{% extends '../layouts/init.html' %}
+
+{% block content%}
+    
+    <div class="container mt-5">
+        <div class="title">Registro</div>
+        <div class="content">
+            <form action="#">
+                <div class="user-details">
+                    <div class="input-box">
+                        <span class="details">Nombre Completo</span>
+                        <input type="text" placeholder="Ingresa tu nombre" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Correo</span>
+                        <input type="email" placeholder="Ingresa tu correo" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Tipo de Documento</span>
+                        <select required>
+                            <option value="" disabled selected>Tipo de documento</option>
+                            <option value="cc">Cédula de Ciudadanía</option>
+                            <option value="ti">Tarjeta de Identidad</option>
+                            <option value="ce">Cédula de Extranjería</option>
+                        </select>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Número de documento</span>
+                        <input type="text" placeholder="Ingresa tu documento" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Ficha de aprendiz</span>
+                        <input type="text" placeholder="Ingresa tu ficha" required>
+                    </div>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Register">
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

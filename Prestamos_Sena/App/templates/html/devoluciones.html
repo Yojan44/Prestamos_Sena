@@ -1,0 +1,42 @@
+{% extends '../layouts/content.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+    <div class="text">DEVOLUCION</div>
+    <form action="#">
+        <div class="form-row">
+            <div class="input-data">
+                <select required>
+                    <option value="" disabled selected>Seleccione Equipo</option>
+                    <!-- Agrega opciones para equipos aquí -->
+                </select>
+            </div>
+            <div class="input-data">
+                <select required>
+                    <option value="" disabled selected>Seleccione Accesorio</option>
+                    <!-- Agrega opciones para accesorios aquí -->
+                </select>
+            </div>
+        </div>
+        <div class="form-row form-row-two">
+            <div class="input-data">
+                <select required>
+                    <option value="" disabled selected>Seleccione Usuario</option>
+                    <!-- Agrega opciones para usuarios aquí -->
+                </select>
+            </div>
+            <div class="input-data">
+                <input type="datetime-local" required>
+                <div class="underline"></div>
+            </div>
+        </div>
+        <div class="form-row submit-btn">
+            <div class="input-data">
+                <button type="submit">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>
+    
+{% endblock %}

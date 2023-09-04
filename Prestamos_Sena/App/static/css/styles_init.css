@@ -1,0 +1,307 @@
+/* Login */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+}
+  
+aside{
+    width: 25%;
+}
+
+.sidebar {
+    background: #ff5800;
+    backdrop-filter: blur(10px);
+    width: 25%;
+    transition: width 0.3s;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    right: 0; 
+    height: 100vh;
+    overflow: hidden;
+}
+
+.form-popup {
+    position: fixed;
+    top: 50%;
+    left: 12.5%; /* Ajusta este valor para centrar el formulario en un 75% de la pantalla */
+    z-index: 10;
+    width: 50%; /* Utilizamos el 75% de la pantalla */
+    opacity: 1;
+    pointer-events: auto;
+    background: #fff;
+    border-radius: 10px;
+    transform: translateY(-50%); /* Centra verticalmente el formulario */
+    border: 1px solid black;
+    max-width: none; /* Elimina la limitación del ancho máximo */
+}
+  
+
+.form-popup .form-box {
+      display: flex;
+}
+  
+.form-box .form-details {
+    width: 100%;
+    color: #fff;
+    max-width: 330px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+  
+.login .form-details {
+    padding: 0 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    background: url("https://images.pexels.com/photos/5496464/pexels-photo-5496464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-position: center;
+    background-size: cover;
+}
+  
+.form-box .form-content {
+    width: 100%;
+    padding: 35px;
+}
+  
+.form-box h2 {
+    text-align: center;
+    margin-bottom: 29px;
+}
+  
+form .input-field {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+}
+  
+.input-field {
+    height: 100%;
+    width: 101%;
+    background: none;
+    outline: none;
+    font-size: 0.95rem;
+    padding: 0px;
+}
+  
+input{
+    height: 100%;
+    width: 101%;
+}
+.input-field:focus {
+    border: 1px solid #4b4b4b;
+}
+  
+/* Estilos para los select cuando están enfocados o tienen un valor seleccionado */
+.input-field :focus + label,
+.input-field :valid + label {
+    transform: translateY(-120%);
+    color: #4b4b4b;
+    font-size: 0.75rem;
+}
+  
+  .form-box a {
+      color: #4b4b4b;
+      text-decoration: none;
+  }
+  
+  .form-box a:hover {
+      text-decoration: underline;
+  }
+  
+  form :where(.forgot-pass-link, .policy-text) {
+      display: inline-flex;
+      margin-top: 13px;
+      font-size: 0.95rem;
+  }
+  
+  form button {
+      width: 101%;
+      color: #fff;
+      border: none;
+      outline: none;
+      padding: 14px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 3px;
+      cursor: pointer;
+      margin: 25px 0;
+      background: #4b4b4b;
+      transition: 0.2s ease;
+  }
+  
+  form button:hover {
+      background: #4b4b4b;
+  }
+  
+  p{
+      margin-bottom: 15rem;
+  }
+  
+/* Registro */
+.container {
+    max-width: 600px;
+    width: 75%;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    background-color: #4b4b4b;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    margin: 0 auto;
+    text-align: left;
+    position: absolute;
+    left: 12.5%; /* Desplazamiento horizontal del 12.5% */
+    top: 25%; /* Desplazamiento vertical del 25% */
+    transform: translateY(-25%); /* Corrige el desplazamiento vertical */
+}
+
+.container .title {
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+}
+  
+.container .title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 30px;
+}
+  
+.content form .user-details {
+    color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px 0;
+}
+  
+form .user-details .input-box {
+    margin-bottom: 15px;
+    width: calc(100% / 2 - 20px);
+}
+  
+  form .input-box span.details {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 5px;
+  }
+  
+.user-details .input-box input {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+  
+.user-details .input-box select {
+    height: 45px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    padding-left: 15px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: grey;
+}
+  
+form .button {
+    height: 45px;
+    margin: 35px 0;
+}
+  
+form .button input {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+    border-color: #fff;
+    background: #fff;
+    border: 2px solid transparent;
+    transition: 0.3s ease;
+}
+  
+form .button input:hover {
+    color: #fff;
+    border-color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+}
+  
+.enlace_form {
+    text-align: center;
+    margin-top: -10px;
+    color: #fff;
+}
+  
+.login-link {
+    color: #efefef;
+    text-decoration: none;
+}
+ 
+form .button input:hover {
+    background: linear-gradient(-135deg, rgba(255, 255, 255, 0.15));
+}
+  
+.wrapper a {
+    color: #efefef;
+    text-decoration: none;
+}
+  
+.wrapper a:hover {
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 25%;
+    }
+
+    main {
+        width: 75%;
+    }
+
+    .form-popup {
+        max-width: 100%; /* Ajusta el ancho máximo para que ocupe toda la pantalla */
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .container{
+        max-width: 100%; /* Ajusta el ancho máximo para que ocupe toda la pantalla */
+        margin: 0;
+        border-radius: 0;
+    }
+}
