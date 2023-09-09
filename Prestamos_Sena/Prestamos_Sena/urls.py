@@ -29,8 +29,6 @@ urlpatterns = [
     path('acceso/', views.index, name='acceso'),
     path('registro/', views.registro, name='registro'),
     
-    # Esta ruta estara vacia para que sea la pagina principal
     path('prestamos/', views.prestamos, name='prestamos'),
-
     path('devoluciones/', views.devoluciones, name='devoluciones'),
 ]
