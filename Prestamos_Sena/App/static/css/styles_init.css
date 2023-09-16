@@ -16,21 +16,18 @@ aside{
 
 .sidebar {
     background: #ff5800;
-    backdrop-filter: blur(10px);
     width: 25%;
-    transition: width 0.3s;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
-    top: 0;
     right: 0; 
     height: 100vh;
-    overflow: hidden;
 }
 
-.form-popup {
+/* Acceso */
+.form-login {
     position: fixed;
     top: 50%;
     left: 12.5%; 
@@ -44,9 +41,8 @@ aside{
     border: 1px solid black;
     max-width: none; 
 }
-  
 
-.form-popup .form-box {
+.form-login .form-box {
       display: flex;
 }
   
@@ -113,55 +109,53 @@ input{
     font-size: 0.75rem;
 }
   
-  .form-box a {
-      color: #4b4b4b;
-      text-decoration: none;
-  }
+.form-box a {
+    color: #4b4b4b;
+    text-decoration: none;
+}
   
-  .form-box a:hover {
-      text-decoration: underline;
-  }
+.form-box a:hover {
+    text-decoration: underline;
+}
   
-  form :where(.forgot-pass-link, .policy-text) {
-      display: inline-flex;
-      margin-top: 13px;
-      font-size: 0.95rem;
-  }
+form :where(.forgot-pass-link, .policy-text) {
+    display: inline-flex;
+    margin-top: 13px;
+    font-size: 0.95rem;
+}
   
-  form button {
-      width: 101%;
-      color: #fff;
-      border: none;
-      outline: none;
-      padding: 14px 0;
-      font-size: 1rem;
-      font-weight: 500;
-      border-radius: 3px;
-      cursor: pointer;
-      margin: 25px 0;
-      background: #4b4b4b;
-      transition: 0.2s ease;
-  }
+form button {
+    width: 101%;
+    color: #fff;
+    border: none;
+    outline: none;
+    padding: 14px 0;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    margin: 25px 0;
+    background: #4b4b4b;
+    transition: 0.2s ease;
+}
   
-  form button:hover {
-      background: #4b4b4b;
-  }
+form button:hover {
+    background: #4b4b4b;
+}
   
-  p{
-      margin-bottom: 15rem;
-  }
+p{
+    margin-bottom: 15rem;
+}
   
 /* Registro */
 .container {
     max-width: 600px;
     width: 75%;
-    background-color: #fff;
     padding: 25px 30px;
     border-radius: 5px;
     background-color: #4b4b4b;
     border: 1px solid rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(9px);
-    -webkit-backdrop-filter: blur(9px);
     margin: 0 auto;
     text-align: left;
     position: absolute;
