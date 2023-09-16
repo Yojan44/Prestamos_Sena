@@ -32,3 +32,7 @@ def prestamos(request):
 def devoluciones(request):
 
     return render(request, 'html/devoluciones.html')
+
+def inventario(request):
+
+    return render(request, 'html/inventario.html')

@@ -1,0 +1,56 @@
+{% extends '../layouts/content.html' %}
+
+{% block content %}
+
+    <div class="container-invent mt-4">
+        <div class="text">INVENTARIO</div>
+        <form action="#">
+            <h6>EQUIPOS</h6>
+            <div class="form-row">
+                <div class="input-data-invent">
+                    <!-- <span class="details">Nombre del equipo</span> -->
+                    <input type="text" placeholder="Ingresa el nombre del equipo" required>
+                </div>
+                <div class="input-data-invent">
+                    <!-- <span class="details">Número de serie</span> -->
+                    <input type="text" placeholder="Ingresa el número de serie" required>
+                </div>
+                <div class="input-data-invent-select">
+                    <select required>
+                        <option value="" disabled selected>Categoria</option>
+                        <!-- Usuarios aquí -->
+                    </select>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="save-icon"><i class="fa fa-angle-double-right"></i></button>
+            </div>
+            <hr>
+        </form>
+
+        <form action="#" class="p-0">
+            <h6>ACCESORIOS</h6>
+            <div class="form-row">
+                <div class="input-data-invent">
+                    <!-- <span class="details">Nombre del accesorio</span> -->
+                    <input type="text" placeholder="Ingresa el nombre del equipo" required>
+                </div>
+                <div class="input-data-invent">
+                    <!-- <span class="details">Número de serie</span> -->
+                    <input type="text" placeholder="Ingresa el número de serie" required>
+                </div>
+                <div class="input-data-invent-select">
+                    <select required>
+                        <option value="" disabled selected>Categoria</option>
+                        <!-- Usuarios aquí -->
+                    </select>
+                </div>
+            </div>
+            <div class="button-container">
+                <button type="submit" class="save-icon"><i class="fa fa-angle-double-right"></i></button>
+            </div>
+        </form>
+    </div>
+    
+{% endblock %}
+
