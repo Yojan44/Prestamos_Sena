@@ -2,18 +2,19 @@
 
 {% block content %}
 
-<div class="form-popup">
+<div class="form-login">
     <div class="form-box login">
         <div class="form-details">
         </div>
         <div class="form-content">
-            <h2>Prestamos Sena</h2>
-            <form action="#">
+            <h2>Préstamos Sena</h2>
+            <form method="post" action="{% url 'index' %}">
+                {% csrf_token %}
                 <div class="input-field">
-                    <input type="email" placeholder="Correo" required>
+                    <input type="text" name="username" placeholder="Usuario" required>
                 </div>
                 <div class="input-field">
-                    <input type="password" placeholder="Contraseña" required>
+                    <input type="password" name="password" placeholder="Contraseña" required>
                 </div>
                 <button type="submit">Iniciar sesión</button>
             </form>

@@ -35,4 +35,5 @@ urlpatterns = [
     path('prestamos/', prestamoViews.prestamos, name='prestamos'),
     path('guardar_prestamo/', prestamoViews.guardar_prestamo, name='guardar_prestamo'),
     path('devoluciones/', views.devoluciones, name='devoluciones'),
+    path('inventario/', views.inventario, name='inventario'),
 ]
