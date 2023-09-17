@@ -4,46 +4,14 @@
 
     <div class="container mt-4">
         <div class="text">PRESTAMOS</div>
-        <form action="#">
-            <div class="form-row">
-                <div class="input-data">
-                    <select required>
-                        <option value="" disabled selected>Seleccione Equipo</option>
-                        <!-- Equipos aquí -->
-                    </select>
-                </div>
-                <div class="input-data">
-                    <select required>
-                        <option value="" disabled selected>Seleccione Accesorio</option>
-                        <!-- Accesorios aquí -->
-                    </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <select required>
-                        <option value="" disabled selected>Seleccione Ficha</option>
-                        <!-- Fichas aquí -->
-                    </select>
-                </div>
-                <div class="input-data">
-                    <select required>
-                        <option value="" disabled selected>Seleccione Usuario</option>
-                        <!-- Usuarios aquí -->
-                    </select>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="input-data">
-                    <input type="datetime-local" required>
-                    <div class="underline"></div>
-                </div>
-            </div>
+        <form action={% url "guardar_prestamo" %} method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
             <div class="form-row submit-btn">
                 <div class="input-data">
                     <button type="submit">Guardar</button>
                 </div>
-            </div>
+            </div> 
         </form>
     </div>
     

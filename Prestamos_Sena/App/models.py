@@ -6,6 +6,9 @@ class Usuario(models.Model):
     correo = models.EmailField(max_length=255)
     contraseña = models.CharField(max_length=255)
 
+    def __str__(self):
+        return self.nombre
+
 class Aprendiz(models.Model):
     aprendiz_id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=255)
@@ -14,17 +17,26 @@ class Aprendiz(models.Model):
     numero_documento = models.CharField(max_length=20)
     ficha_aprendiz = models.CharField(max_length=20)
 
+    def __str__(self):
+        return self.numero_documento + " - " + self.nombre
+
 class Equipo(models.Model):
     equipo_id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=255)
     numero_serie = models.CharField(max_length=50, blank=True, null=True)
     categoria = models.CharField(max_length=50, blank=True, null=True)
 
+    def __str__(self):
+        return self.nombre
+
 class Accesorio(models.Model):
     accesorio_id = models.AutoField(primary_key=True)
     nombre = models.CharField(max_length=255)
     numero_serie = models.CharField(max_length=50, blank=True, null=True)
     categoria = models.CharField(max_length=50, blank=True, null=True)
+
+    def __str__(self):
+        return self.nombre
 
 class Prestamo(models.Model):
     prestamo_id = models.AutoField(primary_key=True)

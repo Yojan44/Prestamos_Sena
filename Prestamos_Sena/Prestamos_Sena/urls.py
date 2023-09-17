@@ -19,6 +19,8 @@ from django.urls import path
 
 # Importamos las vistas desde app
 from App import views
+from App.Views.Registro import registroViews
+from App.Views.Prestamos import prestamoViews
 from django.conf import settings
 
 urlpatterns = [
@@ -27,8 +29,10 @@ urlpatterns = [
     # Esta ruta estara vacia para que sea la pagina principal
     path('', views.index, name='index'),
     path('acceso/', views.index, name='acceso'),
-    path('registro/', views.registro, name='registro'),
+    path('registro/', registroViews.registro, name='registro'),
+    path('registrar/', registroViews.registrar, name='guardar_registro'),
     
-    path('prestamos/', views.prestamos, name='prestamos'),
+    path('prestamos/', prestamoViews.prestamos, name='prestamos'),
+    path('guardar_prestamo/', prestamoViews.guardar_prestamo, name='guardar_prestamo'),
     path('devoluciones/', views.devoluciones, name='devoluciones'),
 ]

@@ -5,19 +5,20 @@
     <div class="container mt-5">
         <div class="title">Registro</div>
         <div class="content">
-            <form action="#">
+            <form action={% url "guardar_registro" %} method="POST">
+                {% csrf_token %}
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Nombre Completo</span>
-                        <input type="text" placeholder="Ingresa tu nombre" required>
+                        <input name="nombre" type="text" placeholder="Ingresa tu nombre" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Correo</span>
-                        <input type="email" placeholder="Ingresa tu correo" required>
+                        <input name="correo" type="email" placeholder="Ingresa tu correo" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Tipo de Documento</span>
-                        <select required>
+                        <select name="tipo_documento" required>
                             <option value="" disabled selected>Tipo de documento</option>
                             <option value="cc">Cédula de Ciudadanía</option>
                             <option value="ti">Tarjeta de Identidad</option>
@@ -26,11 +27,11 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Número de documento</span>
-                        <input type="text" placeholder="Ingresa tu documento" required>
+                        <input name="numero_documento" type="text" placeholder="Ingresa tu documento" required>
                     </div>
                     <div class="input-box">
                         <span class="details">Ficha de aprendiz</span>
-                        <input type="text" placeholder="Ingresa tu ficha" required>
+                        <input name="ficha_aprendiz" type="text" placeholder="Ingresa tu ficha" required>
                     </div>
                 </div>
                 <div class="button">
