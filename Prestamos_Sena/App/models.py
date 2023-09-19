@@ -47,6 +47,9 @@ class Prestamo(models.Model):
     fecha_prestamo = models.DateTimeField()
     estado_prestamo = models.CharField(max_length=50)
 
+    class Meta:
+        db_table = "Prestamo"
+
 class Devolucion(models.Model):
     devolucion_id = models.AutoField(primary_key=True)
     prestamo_id = models.ForeignKey(Prestamo, on_delete=models.CASCADE)

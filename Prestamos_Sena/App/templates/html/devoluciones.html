@@ -1,42 +1,39 @@
 {% extends '../layouts/content.html' %}
 
 {% block content %}
+    <div class="col-md-12">
+    <div class="text">EQUIPOS/ACCESORIOS PRESTADOS</div>
 
-<div class="container mt-4">
-    <div class="text">DEVOLUCIÓN</div>
-    <form action="#">
-        <div class="form-row">
-            <div class="input-data">
-                <select required>
-                    <option value="" disabled selected>Seleccione Equipo</option>
-                    <!-- Equipos aquí -->
-                </select>
-            </div>
-            <div class="input-data">
-                <select required>
-                    <option value="" disabled selected>Seleccione Accesorio</option>
-                    <!-- Accesorios aquí -->
-                </select>
-            </div>
+    {% csrf_token %}
+
+        <div class="table-responsive">
+            <table class="table table-striped table-bordered" width="100%">
+                <thead>
+
+                    <th>Prestamo Id</th>
+                    <th>Usuario</th>
+                    <th>Aprendiz</th>
+                    <th>Equipo</th>
+                    <th>Accesorio</th>
+                    <th>Fecha Prestamo</th>
+                    <th>Estado Prestamo</th>
+                </thead>
+                <tbody>
+                    {% for prestamo in prestamos %}
+                        <tr>
+                            <td>{{prestamo.prestamo_id}}</td>
+                            <td>{{prestamo.usuario_id}}</td>
+                            <td>{{prestamo.aprendiz_id}}</td>
+                            <td>{{prestamo.equipo_id}}</td>
+                            <td>{{prestamo.accesorio_id}}</td>
+                            <td>{{prestamo.fecha_prestamo}}</td>
+                            <td>{{prestamo.estado_prestamo}}</td>
+                            <td><a href="/devolver_equipo/{{prestamo.prestamo_id}}" method="POST" id="devolverBtn" onclick="return confirm('¿Devolver equipo/accesorio?')" class="btn btn-primary"> Devolver</a> </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
-        <div class="form-row form-row-two">
-            <div class="input-data">
-                <select required>
-                    <option value="" disabled selected>Seleccione Usuario</option>
-                    <!-- Usuarios aquí -->
-                </select>
-            </div>
-            <div class="input-data">
-                <input type="datetime-local" required>
-                <div class="underline"></div>
-            </div>
-        </div>
-        <div class="form-row submit-btn">
-            <div class="input-data">
-                <button type="submit">Guardar</button>
-            </div>
-        </div>
-    </form>
-</div>
-    
+    </div>
+
 {% endblock %}

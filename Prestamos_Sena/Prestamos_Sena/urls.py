@@ -21,6 +21,7 @@ from django.urls import path
 from App import views
 from App.Views.Registro import registroViews
 from App.Views.Prestamos import prestamoViews
+from App.Views.Devoluciones import devolucionesView
 from django.conf import settings
 
 urlpatterns = [
@@ -34,6 +35,7 @@ urlpatterns = [
     
     path('prestamos/', prestamoViews.prestamos, name='prestamos'),
     path('guardar_prestamo/', prestamoViews.guardar_prestamo, name='guardar_prestamo'),
-    path('devoluciones/', views.devoluciones, name='devoluciones'),
+    path('devoluciones/', devolucionesView.devoluciones, name='devoluciones'),
+    path('devolver_equipo/<int:prestamo_id>', devolucionesView.devolver_equipo, name='devolver_equipo'),
     path('inventario/', views.inventario, name='inventario'),
 ]
