@@ -7,16 +7,15 @@
     {% csrf_token %}
 
         <div class="table-responsive">
-            <table class="table table-striped table-bordered" width="100%">
+            <table class="table table-striped table-bordered mt-5" width="100%">
                 <thead>
-
                     <th>Prestamo Id</th>
                     <th>Usuario</th>
                     <th>Aprendiz</th>
                     <th>Equipo</th>
                     <th>Accesorio</th>
                     <th>Fecha Prestamo</th>
-                    <th>Estado Prestamo</th>
+                    <!-- <th>Estado Prestamo</th> -->
                 </thead>
                 <tbody>
                     {% for prestamo in prestamos %}
@@ -27,7 +26,7 @@
                             <td>{{prestamo.equipo_id}}</td>
                             <td>{{prestamo.accesorio_id}}</td>
                             <td>{{prestamo.fecha_prestamo}}</td>
-                            <td>{{prestamo.estado_prestamo}}</td>
+                            <!-- <td>{{prestamo.estado_prestamo}}</td> -->
                             <td><a href="/devolver_equipo/{{prestamo.prestamo_id}}" method="POST" id="devolverBtn" onclick="return confirm('¿Devolver equipo/accesorio?')" class="btn btn-primary"> Devolver</a> </td>
                         </tr>
                     {% endfor %}
