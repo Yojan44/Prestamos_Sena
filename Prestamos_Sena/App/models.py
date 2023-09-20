@@ -27,7 +27,7 @@ class Equipo(models.Model):
     categoria = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
-        return self.nombre
+        return self.numero_serie + " - " + self.nombre
 
 class Accesorio(models.Model):
     accesorio_id = models.AutoField(primary_key=True)
@@ -36,7 +36,7 @@ class Accesorio(models.Model):
     categoria = models.CharField(max_length=50, blank=True, null=True)
 
     def __str__(self):
-        return self.nombre
+        return self.numero_serie + " - " + self.nombre
 
 class Prestamo(models.Model):
     prestamo_id = models.AutoField(primary_key=True)

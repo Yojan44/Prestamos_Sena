@@ -1,15 +1,13 @@
 from django.shortcuts import render, redirect
-from time import gmtime, strftime
 import datetime
-from django.forms import forms
-from App.models import Prestamo, Devolucion, Usuario, Aprendiz, Equipo, Accesorio
-from App.forms import DevolucionesForm
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
+from App.models import Prestamo
+from django.core.paginator import Paginator
 
 def devoluciones(request):
-    # devolucionesForm = DevolucionesForm()
     prestamos = Prestamo.objects.all()
+    paginator = Paginator(prestamos, 5)
+    page_number = request.GET.get('page')
+    prestamos = paginator.get_page(page_number)
     print(prestamos)
     return render(request, 'html/devoluciones.html', {'prestamos' : prestamos})
 
@@ -21,5 +19,4 @@ def devolver_equipo(request, prestamo_id):
     prestamo.estado_prestamo = "Devuelto"
     print(prestamo)
     prestamo.save()
-    # prestamo.
     return redirect('/devoluciones/')    

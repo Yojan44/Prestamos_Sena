@@ -21,6 +21,3 @@ def index(request):
 
 #     return render(request, 'html/devoluciones.html')
 
-def inventario(request):
-
-    return render(request, 'html/inventario.html')

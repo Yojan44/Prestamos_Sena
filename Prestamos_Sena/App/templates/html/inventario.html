@@ -4,20 +4,22 @@
 
     <div class="container-invent mt-4">
         <div class="text">INVENTARIO</div>
-        <form action="#">
-            <h6>EQUIPOS</h6>
+        <form action={% url "guardar_inventario" %} method="POST">
+            {% comment %} <h6>EQUIPOS</h6> {% endcomment %}
             <div class="form-row">
                 <div class="input-data-invent">
                     <!-- <span class="details">Nombre del equipo</span> -->
-                    <input type="text" placeholder="Ingresa el nombre del equipo" required>
+                    <input type="text" placeholder="Ingresa el nombre del equipo" required name="nombre">
                 </div>
                 <div class="input-data-invent">
                     <!-- <span class="details">Número de serie</span> -->
-                    <input type="text" placeholder="Ingresa el número de serie" required>
+                    <input type="text" placeholder="Ingresa el número de serie" required name="numero_serie">
                 </div>
                 <div class="input-data-invent-select">
-                    <select required>
-                        <option value="" disabled selected>Categoria</option>
+                    <select required name="categoria">
+                        {% comment %} <option value="" disabled selected>Categoria</option> {% endcomment %}
+                        <option value="Accesorio">Accesorio</option>
+                        <option value="Equipo">Equipo</option>
                         <!-- Usuarios aquí -->
                     </select>
                 </div>
@@ -28,7 +30,7 @@
             <hr>
         </form>
 
-        <form action="#" class="p-0">
+        {% comment %} <form action="#" class="p-0">
             <h6>ACCESORIOS</h6>
             <div class="form-row">
                 <div class="input-data-invent">
@@ -49,7 +51,7 @@
             <div class="button-container">
                 <button type="submit" class="save-icon"><i class="fa fa-angle-double-right"></i></button>
             </div>
-        </form>
+        </form> {% endcomment %}
     </div>
 
 <table class="table table-striped mt-5">
@@ -70,6 +72,58 @@
     {% endfor %}
   </tbody>
 </table>
+<div class="pagination">
+    <span class="step-links">
+        {% if equipos.has_previous %}
+            <a href="?pageEquipos=1">&laquo; first</a>
+            <a href="?pageEquipos={{ equipos.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ equipos.number }} of {{ equipos.paginator.num_pages }}.
+        </span>
+
+        {% if equipos.has_next %}
+            <a href="?pageEquipos={{ equipos.next_page_number }}">next</a>
+            <a href="?pageEquipos={{ equipos.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Accesorio</th>
+        <th>Número de serie</th>
+        <th>Categoría</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for accesorio in accesorios %}
+      <tr>
+        <td>{{ accesorio.nombre }}</td>
+        <td>{{ accesorio.numero_serie }}</td>
+        <td>{{ accesorio.categoria }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <div class="pagination">
+    <span class="step-links">
+        {% if accesorios.has_previous %}
+            <a href="?pageAccesorios=1">&laquo; first</a>
+            <a href="?pageAccesorios={{ accesorios.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ accesorios.number }} of {{ accesorios.paginator.num_pages }}.
+        </span>
+
+        {% if accesorios.has_next %}
+            <a href="?pageAccesorios={{ accesorios.next_page_number }}">next</a>
+            <a href="?pageAccesorios={{ accesorios.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>
     
 {% endblock %}
 
