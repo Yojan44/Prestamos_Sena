@@ -24,14 +24,19 @@
 <body>
 
     <aside class="sidebar">
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-sm-3 order-sm-last sidebar-content"></div>
-          </div>
-      </div>
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+              <div class="col-sm-3 order-sm-last sidebar-content">
+                <div class="logo">
+                    <img src="{% static 'img/Sena.png' %}" alt="logo">
+                    <!-- <h2>Préstamos Sena</h2> -->
+                </div>
+              </div>
+            </div>
+        </div>
     </aside>
     
-    <main>
+    <main class="w-75 m-5">
         {% block content %}
                 
         {% endblock %}

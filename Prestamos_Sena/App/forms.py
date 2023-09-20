@@ -7,6 +7,12 @@ class PrestamosForm(forms.ModelForm):
         model = Prestamo
         fields = '__all__'
 
+    def __init__(self, *args, **kwargs):
+        super(PrestamosForm, self).__init__(*args, **kwargs)
+
+        # Personaliza el campo fecha_prestamo
+        self.fields['fecha_prestamo'].widget = forms.DateTimeInput(attrs={'type': 'datetime-local'})
+
 class DevolucionesForm(forms.ModelForm):
 
     class Meta:

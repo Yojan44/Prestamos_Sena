@@ -11,12 +11,13 @@
             <form method="post" action="{% url 'index' %}">
                 {% csrf_token %}
                 <div class="input-field">
-                    <input type="text" name="username" placeholder="Usuario" required>
+                    <input type="text" name="username" placeholder="  Usuario" required>
                 </div>
                 <div class="input-field">
-                    <input type="password" name="password" placeholder="Contraseña" required>
+                    <input type="password" name="password" placeholder="  Contraseña" required>
                 </div>
                 <button type="submit">Iniciar sesión</button>
+                <a href="{% url 'registro' %}" class="btn">Registrarse</a>
             </form>
         </div>
     </div>

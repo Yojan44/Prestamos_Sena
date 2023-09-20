@@ -5,8 +5,40 @@
     <div class="container mt-4">
         <div class="text">PRESTAMOS</div>
         <form action={% url "guardar_prestamo" %} method="POST">
-            {% csrf_token %}
-            {{form.as_p}}
+            <div class="input-data">
+                {% csrf_token %}
+                <!-- {{form.as_p}} -->
+                <div class="campo">
+                    <label for="{{ form.usuario_id.id_for_label }}">Usuario:</label>
+                    {{ form.usuario_id }}
+                </div>
+            
+                <div class="campo">
+                    <label for="{{ form.aprendiz_id.id_for_label }}">Aprendiz:</label>
+                    {{ form.aprendiz_id }}
+                </div>
+            
+                <div class="campo">
+                    <label for="{{ form.equipo_id.id_for_label }}">Equipo:</label>
+                    {{ form.equipo_id }}
+                </div>
+            
+                <div class="campo">
+                    <label for="{{ form.accesorio_id.id_for_label }}">Accesorio:</label>
+                    {{ form.accesorio_id }}
+                </div>
+            
+                <div class="campo2">
+                    <label for="{{ form.fecha_prestamo.id_for_label }}">Fecha prestamo:</label>
+                    {{ form.fecha_prestamo }}
+                </div>
+            
+                <!-- <div class="campo">
+                    <label for="{{ form.estado_prestamo.id_for_label }}">Estado prestamo:</label>
+                    {{ form.estado_prestamo }}
+                </div> -->
+                
+            </div>
             <div class="form-row submit-btn">
                 <div class="input-data">
                     <button type="submit">Guardar</button>
