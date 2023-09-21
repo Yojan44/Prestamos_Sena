@@ -435,3 +435,19 @@ form .form-row .input-data-invent {
     cursor: pointer;
     margin: -70px 0px 0px -35px;
 }
+
+.container-tables{
+    display: flex;
+}
+
+.table-2{
+    width: 50%;
+    margin-top: 80px;
+    margin-left: 10px;
+}
+
+.current{
+    display: inline-block;
+    margin-left: -304px;
+    margin-top: 50px;
+}
