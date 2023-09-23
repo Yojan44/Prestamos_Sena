@@ -21,3 +21,6 @@ def index(request):
 
 #     return render(request, 'html/devoluciones.html')
 
+def inicio(request):
+    
+    return render(request, 'html/inicio.html')

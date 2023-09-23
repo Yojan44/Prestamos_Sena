@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="button-container">
-                <button type="submit" class="save-icon"><i class="fa fa-angle-double-right"></i></button>
+                <button type="submit" class="save-icon"><i class="fa fa-arrow-down"></i></button>
             </div>
             <hr>
         </form>
@@ -76,18 +76,21 @@
       <div class="pagination">
           <span class="step-links">
               {% if equipos.has_previous %}
-                  <a href="?pageEquipos=1">&laquo; first</a>
-                  <a href="?pageEquipos={{ equipos.previous_page_number }}">previous</a>
+                  <a href="?pageEquipos=1" class="enlace-fijo_1 fa fa-fast-backward">&laquo;</a>
+                  <a href="?pageEquipos={{ equipos.previous_page_number }}" class="enlace-fijo_2 fa fa-backward"></a>
               {% endif %}
       
-              <span class="current">
-                  Page {{ equipos.number }} of {{ equipos.paginator.num_pages }}.
-              </span>
-      
-              {% if equipos.has_next %}
-                  <a href="?pageEquipos={{ equipos.next_page_number }}">next</a>
-                  <a href="?pageEquipos={{ equipos.paginator.num_pages }}">last &raquo;</a>
-              {% endif %}
+              <div class="contenedor-fijo">
+                <span class="span_1">
+                    Page {{ equipos.number }} of {{ equipos.paginator.num_pages }}.
+                </span>
+            
+                {% if equipos.has_next %}
+                    <a href="?pageEquipos={{ equipos.next_page_number }}" class="enlace-fijo_1 fa fa-forward"></a>
+                    <a href="?pageEquipos={{ equipos.paginator.num_pages }}" class="enlace-fijo_2 fa fa fa-fast-forward">&raquo;</a>
+                {% endif %}
+            </div>
+              
           </span>
       </div>
       <table class="table table-striped table-2">
@@ -111,18 +114,20 @@
         <div class="pagination">
           <span class="step-links">
               {% if accesorios.has_previous %}
-                  <a href="?pageAccesorios=1">&laquo; first</a>
-                  <a href="?pageAccesorios={{ accesorios.previous_page_number }}">previous</a>
+                  <a href="?pageAccesorios=1" class="enlace-fijo_3 fa fa-fast-backward">&laquo;</a>
+                  <a href="?pageAccesorios={{ accesorios.previous_page_number }}" class="enlace-fijo_4 fa fa-backward"></a>
               {% endif %}
       
-              <span class="current">
-                  Page {{ accesorios.number }} of {{ accesorios.paginator.num_pages }}.
-              </span>
-      
-              {% if accesorios.has_next %}
-                  <a href="?pageAccesorios={{ accesorios.next_page_number }}">next</a>
-                  <a href="?pageAccesorios={{ accesorios.paginator.num_pages }}">last &raquo;</a>
-              {% endif %}
+              <div class="current_1">
+                <span class="span_2">
+                    Page {{ accesorios.number }} of {{ accesorios.paginator.num_pages }}.
+                </span>
+                {% if accesorios.has_next %}
+                  <a href="?pageAccesorios={{ accesorios.next_page_number }}" class="enlace-fijo_3 fa fa-forward"></a>
+                  <a href="?pageAccesorios={{ accesorios.paginator.num_pages }}" class="enlace-fijo_4 fa fa-fast-forward"> &raquo;</a>
+                {% endif %}
+              </div>
+              
           </span>
       </div>
 </div>

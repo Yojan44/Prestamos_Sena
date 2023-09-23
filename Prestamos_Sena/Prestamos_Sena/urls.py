@@ -39,5 +39,6 @@ urlpatterns = [
     path('devoluciones/', devolucionesView.devoluciones, name='devoluciones'),
     path('devolver_equipo/<int:prestamo_id>', devolucionesView.devolver_equipo, name='devolver_equipo'),
     path('inventario/', inventarioViews.inventario, name='inventario'),
-    path('guardar_inventario/', inventarioViews.guardar_inventario, name='guardar_inventario')
+    path('guardar_inventario/', inventarioViews.guardar_inventario, name='guardar_inventario'),
+    path('inicio/', views.inicio, name='inicio'),
 ]
