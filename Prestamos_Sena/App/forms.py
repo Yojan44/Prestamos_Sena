@@ -1,5 +1,5 @@
 from django import forms
-from .models import Prestamo, Devolucion
+from .models import Prestamo, Devolucion, Equipo, Accesorio
 
 class PrestamosForm(forms.ModelForm):
 
@@ -10,6 +10,8 @@ class PrestamosForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(PrestamosForm, self).__init__(*args, **kwargs)
+        self.fields['equipo_id'].queryset = Equipo.objects.filter(estado='Disponible')
+        self.fields['accesorio_id'].queryset = Accesorio.objects.filter(estado='Disponible')
 
         # Personaliza el campo fecha_prestamo
         self.fields['fecha_prestamo'].widget = forms.DateTimeInput(attrs={'type': 'datetime-local'})

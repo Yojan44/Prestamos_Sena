@@ -26,6 +26,7 @@ class Equipo(models.Model):
     nombre = models.CharField(max_length=255)
     numero_serie = models.CharField(max_length=50, blank=True, null=True)
     categoria = models.CharField(max_length=50, blank=True, null=True)
+    estado = models.CharField(max_length=50, blank=True, null=True, default='Disponible')
 
     def __str__(self):
         return self.numero_serie + " - " + self.nombre
@@ -35,6 +36,7 @@ class Accesorio(models.Model):
     nombre = models.CharField(max_length=255)
     numero_serie = models.CharField(max_length=50, blank=True, null=True)
     categoria = models.CharField(max_length=50, blank=True, null=True)
+    estado = models.CharField(max_length=50, blank=True, null=True, default='Disponible')
 
     def __str__(self):
         return self.numero_serie + " - " + self.nombre
