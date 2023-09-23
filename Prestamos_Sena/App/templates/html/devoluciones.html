@@ -7,6 +7,13 @@
     {% csrf_token %}
 
         <div class="table-responsive">
+            {% comment %} <form>
+                <div class="input-group mb-3">
+                    <input name="q" type="text" class="form-control input-sm" placeholder="Buscar" value="">
+                    <button class="btn btn-secondary" title="Search"><i class="fas fa-search"></i></button>
+                    <a href="{% url 'devoluciones'%}" class="btn btn-dark" style="margin-left:2px" title="refresh"><i class="fas fa-sync-alt"></i></a>
+                </div>
+            </form> {% endcomment %}
             <table class="table table-striped table-bordered mt-5" width="100%">
                 <thead>
                     <th>Prestamo Id</th>
@@ -15,6 +22,7 @@
                     <th>Equipo</th>
                     <th>Accesorio</th>
                     <th>Fecha Prestamo</th>
+                    <th>Fecha Devolución</th>
                     <!-- <th>Estado Prestamo</th> -->
                 </thead>
                 <tbody>
@@ -26,6 +34,7 @@
                             <td>{{prestamo.equipo_id}}</td>
                             <td>{{prestamo.accesorio_id}}</td>
                             <td>{{prestamo.fecha_prestamo}}</td>
+                            <td>{{prestamo.fecha_devolucion}}</td>
                             <!-- <td>{{prestamo.estado_prestamo}}</td> -->
                             <td><a href="/devolver_equipo/{{prestamo.prestamo_id}}" method="POST" id="devolverBtn" onclick="return confirm('¿Devolver equipo/accesorio?')" class="btn btn-primary"> Devolver</a> </td>
                         </tr>

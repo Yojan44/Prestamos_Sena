@@ -2,6 +2,9 @@
 
 {% block content %}
 
+    {% for msg in messages %}
+    {{ msg }}
+    {% endfor %}
     <div class="container mt-4">
         <div class="text">PRESTAMOS</div>
         <form action={% url "guardar_prestamo" %} method="POST">

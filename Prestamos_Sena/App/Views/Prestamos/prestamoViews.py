@@ -4,6 +4,7 @@ from App.models import Prestamo, Devolucion, Usuario, Aprendiz, Equipo, Accesori
 from App.forms import PrestamosForm
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib import messages
 
 def prestamos(request):
     prestamosForm = PrestamosForm()
@@ -12,8 +13,14 @@ def prestamos(request):
 
 def guardar_prestamo(request):
     prestamosForm = PrestamosForm(request.POST)
+    equipo_id = prestamosForm.data['equipo_id']
+    accesorio_id = prestamosForm.data['accesorio_id']
     if prestamosForm.is_valid():
-        print(request.POST)
-        prestamosForm.save()
-        return redirect('/prestamos/')
+        if (equipo_id == '') & (accesorio_id == ''):
+            messages.warning(request, 'Debe seleccionar un equipo o un accesorio primero.')
+            return redirect('/prestamos/')
+        else:
+            print(request.POST)
+            prestamosForm.save()
+            return redirect('/prestamos/')
     return redirect('/prestamos/')

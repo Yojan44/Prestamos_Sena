@@ -1,4 +1,5 @@
 from django.db import models
+import datetime
 
 class Usuario(models.Model):
     user_id = models.AutoField(primary_key=True)
@@ -42,9 +43,10 @@ class Prestamo(models.Model):
     prestamo_id = models.AutoField(primary_key=True)
     usuario_id = models.ForeignKey(Usuario, on_delete=models.CASCADE)
     aprendiz_id = models.ForeignKey(Aprendiz, on_delete=models.CASCADE)
-    equipo_id = models.ForeignKey(Equipo, on_delete=models.CASCADE)
-    accesorio_id = models.ForeignKey(Accesorio, on_delete=models.CASCADE)
+    equipo_id = models.ForeignKey(Equipo, on_delete=models.CASCADE, null=True, blank=True)
+    accesorio_id = models.ForeignKey(Accesorio, on_delete=models.CASCADE, null=True, blank=True)
     fecha_prestamo = models.DateTimeField()
+    fecha_devolucion = models.DateTimeField(null=True)
     estado_prestamo = models.CharField(max_length=50)
 
     class Meta:
@@ -55,7 +57,7 @@ class Devolucion(models.Model):
     prestamo_id = models.ForeignKey(Prestamo, on_delete=models.CASCADE)
     equipo_devuelto_id = models.ForeignKey(Equipo, on_delete=models.CASCADE)
     accesorio_devuelto_id = models.ForeignKey(Accesorio, on_delete=models.CASCADE)
-    fecha_devolucion = models.DateTimeField()
+    fecha_devolucion = models.DateTimeField(blank=True, null=True)
 
 class Inventario(models.Model):
     inventario_id = models.AutoField(primary_key=True)

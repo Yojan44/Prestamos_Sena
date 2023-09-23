@@ -5,7 +5,8 @@ class PrestamosForm(forms.ModelForm):
 
     class Meta:
         model = Prestamo
-        fields = '__all__'
+        # fields = '__all__'
+        fields = ['usuario_id', 'aprendiz_id', 'equipo_id', 'accesorio_id', 'fecha_prestamo']
 
     def __init__(self, *args, **kwargs):
         super(PrestamosForm, self).__init__(*args, **kwargs)
